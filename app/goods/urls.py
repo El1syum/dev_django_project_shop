@@ -1,6 +1,11 @@
-def main():
-    ...
-    
+from django.urls import path
 
-if __name__ == '__main__':
-    main()
+from goods import views
+
+
+app_name = 'goods'
+
+urlpatterns = [
+    path('', views.catalog, name='index'),
+    path('product/', views.product, name='product'),
+]
