@@ -1,3 +1,9 @@
-from django.db import models
+from django.db.models import CharField, Model, SlugField
 
-# Create your models here.
+
+class Categories(Model):
+    name = CharField(max_length=150, unique=True)
+    slug = SlugField(unique=True, blank=True, null=True)
+
+    class Meta:
+        db_table = 'category'
