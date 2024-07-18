@@ -18,7 +18,7 @@ class Products(Model):
     description = TextField(blank=True, null=True, verbose_name='Описание')
     image = ImageField(upload_to='goods_images', blank=True, null=True, verbose_name='Изображение')
     price = DecimalField(default=0.00, max_digits=7, decimal_places=2, verbose_name='Цена')
-    discount = DecimalField(default=0.00, max_digits=1, decimal_places=2, verbose_name='Скидка в %')
+    discount = DecimalField(default=0.00, max_digits=7, decimal_places=2, verbose_name='Скидка в %')
     quantity = PositiveIntegerField(default=0, verbose_name='Количество')
     category = ForeignKey(Categories, on_delete=CASCADE, verbose_name='Категория')
 
